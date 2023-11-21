@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    android:orientation="vertical"
+    android:padding="48dp"
+    tools:context=".Registro">
+
+
+    <TextView
+        android:id="@+id/texto_conectar"
+        android:layout_width="207dp"
+        android:layout_height="177dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:drawableBottom="@drawable/ic_icon_foreground"
+        android:text="REGISTRAR USUARIO"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/id_registro"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:maxLength="3"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:hint="Introduce un ID de usuario (000)"
+        />
+    <EditText
+        android:id="@+id/usuario_registro"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:hint="Introduce un nombre de usuario"
+        />
+
+    <EditText
+        android:id="@+id/contrasena_registro"
+        android:layout_width="match_parent"
+        android:inputType="textPassword"
+        android:layout_height="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:ems="10"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:hint="Introduce una clave"
+         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <Button
+            android:id="@+id/registrarse"
+            android:backgroundTint="@color/teal_700"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+
+            android:text="Registrarse" />
+    </LinearLayout>
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

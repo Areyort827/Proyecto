@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo"
+    android:padding="48dp">
+
+    <TextView
+        android:id="@+id/puntuacion"
+        android:layout_width="207dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:text="Score"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/texto"
+        android:paddingTop="50dp"
+        android:layout_width="250dp"
+        android:textColor="@color/white"
+
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Congratulations, you got the title of the movie right!"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+    <TextView
+        android:id="@+id/puntos"
+        android:paddingTop="50dp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+
+        android:layout_gravity="center_horizontal"
+        android:text="You have obtained X points"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+
+    <TextView
+        android:id="@+id/volver"
+        android:paddingTop="150dp"
+        android:textColor="@color/white"
+
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Do you want to return to the main menu?"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+        <Button
+            android:id="@+id/no"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/holo_red_dark"
+            android:layout_gravity="center_horizontal"
+            android:paddingRight="20dp"
+            android:layout_weight="1"
+            android:text="No" />
+
+        <Button
+            android:id="@+id/si"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="Yes"
+            android:backgroundTint="@android:color/holo_green_dark"
+
+            />
+    </LinearLayout>
+</LinearLayout>
