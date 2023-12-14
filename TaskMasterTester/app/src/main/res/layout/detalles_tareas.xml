@@ -3,81 +3,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/fondo"
-    android:padding="48dp">
+    android:background="@drawable/fondo2"
+    android:padding="35dp">
 
     <TextView
-        android:id="@+id/puntuacion"
+        android:id="@+id/detalles"
         android:layout_width="207dp"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:layout_gravity="center_horizontal"
-        android:text="Score"
+        android:text="DETALLES EVENTO"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView
+        android:id="@+id/DetallesTitulo"
+        android:layout_width="207dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:textSize="25sp"
+        android:text="Titulo"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+    <TextView
+        android:id="@+id/dtitulo"
+        android:layout_width="207dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:text="Evento"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/texto"
+        android:id="@+id/DetallesDescripcion"
         android:paddingTop="50dp"
         android:layout_width="250dp"
         android:textColor="@color/white"
-
         android:layout_height="wrap_content"
+        android:textSize="25sp"
         android:layout_gravity="center_horizontal"
-        android:text="Congratulations, you got the title of the movie right!"
+        android:text="Descripcion"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
-
     <TextView
-        android:id="@+id/puntos"
+        android:id="@+id/ddescripcion"
         android:paddingTop="50dp"
         android:layout_width="250dp"
-        android:layout_height="wrap_content"
         android:textColor="@color/white"
-
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="You have obtained X points"
+        android:text="Descripcion"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-
-
-    <TextView
-        android:id="@+id/volver"
-        android:paddingTop="150dp"
-        android:textColor="@color/white"
-
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="Do you want to return to the main menu?"
-        android:textAlignment="center"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="15dp">
-        <Button
-            android:id="@+id/no"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_red_dark"
-            android:layout_gravity="center_horizontal"
-            android:paddingRight="20dp"
-            android:layout_weight="1"
-            android:text="No" />
-
-        <Button
-            android:id="@+id/si"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:text="Yes"
-            android:backgroundTint="@android:color/holo_green_dark"
-
-            />
-    </LinearLayout>
 </LinearLayout>

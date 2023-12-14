@@ -30,6 +30,9 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
 
     public TextView password;
 
+    public TextView correo;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -43,12 +46,13 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
         id = this.findViewById(R.id.id_registro);
         usuario=this.findViewById(R.id.usuario_registro);
         password=this.findViewById(R.id.contrasena_registro);
+        correo=this.findViewById(R.id.correo_registro);
         r.setOnClickListener(this);
 
     }
 
     public void registrarUsuario() {
-        String url = "http://192.168.1.136/proyecto/registrar.php?id="+Integer.parseInt(id.getText().toString()) +"&nombre="+usuario.getText().toString()+"&pwd="+password.getText().toString();
+        String url = "http://192.168.1.138/proyecto/registrar.php?id="+Integer.parseInt(id.getText().toString()) +"&nombre="+usuario.getText().toString()+"&pwd="+password.getText().toString()+"&correo="+correo.getText().toString();
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -72,9 +76,19 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.registrarse) {
-            registrarUsuario();
-            Intent i = new Intent(this, Inicio.class);
-            this.startActivity(i);
+            if(id.getText().toString().isEmpty()){
+                id.setError("Introduce un ID");
+            }else if(usuario.getText().toString().isEmpty()){
+                usuario.setError("Introduce un usuario");
+            }else if(password.getText().toString().isEmpty()){
+                password.setError("Introduce una contraseña");
+            }else if(!id.getText().toString().isEmpty() && !usuario.getText().toString().isEmpty() && !password.getText().toString().isEmpty()){
+                registrarUsuario();
+                Intent i = new Intent(this, Inicio.class);
+                this.startActivity(i);
+            }
+
+
         }
 
     }

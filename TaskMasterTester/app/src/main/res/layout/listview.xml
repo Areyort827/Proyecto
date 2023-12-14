@@ -10,15 +10,16 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Proximos eventos"
+        android:text="Lista de Usuarios"
         android:layout_gravity="center"
         android:paddingBottom="30dp"
         android:paddingTop="20dp"
         android:textSize="35sp"/>
     <ListView
-        android:id="@+id/listViewEventos"
+        android:id="@+id/listViewUsuarios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
 
     </ListView>
 </LinearLayout>

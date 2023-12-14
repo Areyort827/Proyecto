@@ -1,83 +1,329 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/newtask"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo"
     android:orientation="vertical"
-    android:background="@color/fondo"
     android:padding="48dp">
 
-    <TextView
-        android:id="@+id/puntuacion"
-        android:layout_width="207dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_gravity="center_horizontal"
-        android:text="Nueva tarea"
-        android:textAlignment="center"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    <Switch
-        android:id="@+id/switch1"
-        android:paddingTop="50dp"
-        android:layout_width="200dp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_height="wrap_content"
-        android:text="Todo el día"
-        android:textColor="@color/white"/>
-
-
-    <TextView
-        android:id="@+id/texto"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:paddingTop="50dp"
-        android:text="Fecha inicio"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/white" />
-
-    <TextView
-        android:id="@+id/puntos"
-        android:paddingTop="50dp"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:text="Fecha fin"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-
-
-    <TextView
-        android:id="@+id/volver"
-        android:paddingTop="50dp"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tipo"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="15dp">
-        <Button
-            android:id="@+id/no"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@android:color/holo_red_dark"
-            android:layout_gravity="center_horizontal"
-            android:paddingRight="20dp"
-            android:layout_weight="1"
-            android:text="No" />
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/si"
-            android:layout_width="200dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:text="Yes"
-            android:backgroundTint="@android:color/holo_green_dark"
-            />
-    </LinearLayout>
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/portada"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="Nueva tarea"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:text="Titulo"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/txtTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="titulo" />
+
+            <TextView
+                android:id="@+id/descripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:text="Descripcion"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/txtDescripcion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:ems="10"
+                android:hint="Descripcion" />
+
+            <TextView
+                android:id="@+id/ifecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:text="Fecha Inicio"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="30dp">
+
+                <ImageButton
+                    android:id="@+id/btnFechai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    app:srcCompat="@android:drawable/ic_menu_today" />
+
+                <EditText
+                    android:id="@+id/txtFechai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Fecha inicial"
+                    android:inputType="date" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/ihora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:text="Hora Inicio"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="30dp">
+
+                <ImageButton
+                    android:id="@+id/btnHorai"
+                    android:layout_width="83dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    app:srcCompat="@android:drawable/ic_menu_today" />
+
+                <EditText
+                    android:id="@+id/txtHorai"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Hora inicial"
+                    android:inputType="date" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fFecha"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:text="Fecha Fin"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="30dp">
+
+                <ImageButton
+                    android:id="@+id/btnFechaF"
+                    android:layout_width="83dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    app:srcCompat="@android:drawable/ic_menu_today" />
+
+                <EditText
+                    android:id="@+id/txtFechaF"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Fecha final"
+                    android:inputType="date" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fhora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="30dp"
+                android:text="Hora Fin"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="30dp">
+
+                <ImageButton
+                    android:id="@+id/btnHoraf"
+                    android:layout_width="83dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick"
+                    app:srcCompat="@android:drawable/ic_menu_today" />
+
+                <EditText
+                    android:id="@+id/txtHoraf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:hint="Hora final"
+                    android:inputType="date" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/tipo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="50dp"
+                android:text="Tipo"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <ImageButton
+                    android:id="@+id/btnTipo"
+                    android:layout_width="83dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:onClick="onClick" />
+
+                <ImageButton
+                    android:id="@+id/btnTipoAzul"
+                    android:layout_width="83dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/boton_azul"
+                    android:onClick="onClick"
+
+                    />
+
+                <ImageButton
+                    android:id="@+id/btnTipoVerde"
+                    android:layout_width="83dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/boton_verde"
+                    android:onClick="onClick"
+
+                    />
+
+                <ImageButton
+                    android:id="@+id/btnTipoAmarillo"
+                    android:layout_width="83dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/boton_amarillo"
+                    android:onClick="onClick"
+
+                    />
+
+                <ImageButton
+                    android:id="@+id/btnTipoRojo"
+                    android:layout_width="83dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/boton_rojo"
+                    android:onClick="onClick" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/notificacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="50dp"
+                android:text="Notificacion"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/white" />
+
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/min30"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="30 min antes" />
+
+                <RadioButton
+                    android:id="@+id/h1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1 hora antes" />
+
+                <RadioButton
+                    android:id="@+id/h2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="2 horas antes" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <Button
+                    android:id="@+id/guardar"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/holo_green_dark"
+                    android:onClick="onClick"
+                    android:text="Guardar Tarea" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
 </LinearLayout>

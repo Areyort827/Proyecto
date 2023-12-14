@@ -4,13 +4,20 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+
         <item
             android:id="@+id/nav_home"
+            android:icon="@drawable/ic_icon_calendar"
+            android:title="Calendario" />
+        <item
+            android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_tareas"
             android:title="Tareas" />
+
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_ajustes"
             android:title="Ajustes" />
+
     </group>
 </menu>
