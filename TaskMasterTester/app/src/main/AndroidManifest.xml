@@ -14,6 +14,7 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/icon"
         android:label="TaskMaster"
+        android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/Theme.TaskMasterTester.NoActionBar"
         tools:targetApi="31">

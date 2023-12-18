@@ -3,6 +3,7 @@ package com.example.taskmastertester;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,7 +41,8 @@ public class Inicio extends AppCompatActivity implements View.OnClickListener, R
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pantalla_inicio);
-        admin = false;
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        //admin = false;
         b = this.findViewById(R.id.boton_iniciar_sesion);
         r = this.findViewById(R.id.boton_registrarse);
         usuario=this.findViewById(R.id.input_usuario);
@@ -63,7 +65,7 @@ public class Inicio extends AppCompatActivity implements View.OnClickListener, R
     }
 
     private void iniciarSesion() {
-        String url = "http://192.168.1.138/proyecto/iniciar.php?nombre=" + usuario.getText().toString() + "&pwd=" + password.getText().toString();
+        String url = "http://172.20.10.2/proyecto/iniciar.php?nombre=" + usuario.getText().toString() + "&pwd=" + password.getText().toString();
         jrq = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         queue.add(jrq);
     }
@@ -92,22 +94,21 @@ public class Inicio extends AppCompatActivity implements View.OnClickListener, R
     }
 
     public void comprobarAdmin(int id) {
-        String url = "http://192.168.1.138/proyecto/Admin.php?id="+id;
-
+        String url = "http://172.20.10.2/proyecto/Admin.php?id="+id;
+        //172.20.10.2
+        //192.168.1.138
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
                 Toast.makeText(Inicio.this, "Has iniciado en modo Administrador", Toast.LENGTH_SHORT).show();
                 admin = true;
-
-
             }
 
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 System.out.println(error);
-
+                admin = false;
             }
         });
         queue.add(request);

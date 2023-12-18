@@ -1,6 +1,7 @@
 package com.example.taskmastertester;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +39,7 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registrar);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
 
@@ -52,8 +54,9 @@ public class Registro extends AppCompatActivity implements View.OnClickListener{
     }
 
     public void registrarUsuario() {
-        String url = "http://192.168.1.138/proyecto/registrar.php?id="+Integer.parseInt(id.getText().toString()) +"&nombre="+usuario.getText().toString()+"&pwd="+password.getText().toString()+"&correo="+correo.getText().toString();
-
+        String url = "http://172.20.10.2/proyecto/registrar.php?id="+Integer.parseInt(id.getText().toString()) +"&nombre="+usuario.getText().toString()+"&pwd="+password.getText().toString()+"&correo="+correo.getText().toString();
+        //172.20.10.2
+        //192.168.1.138
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {

@@ -5,6 +5,7 @@ package com.example.taskmastertester;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -77,6 +78,7 @@ public class NuevaTarea extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.anadir_tarea);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         //getSupportActionBar().hide();
         guardar = this.findViewById(R.id.guardar);
         txtTitulo= this.findViewById(R.id.txtTitulo);
@@ -153,7 +155,7 @@ public class NuevaTarea extends AppCompatActivity {
 
     public void onClick(View v){
         if(v.getId() == R.id.btnFechai){
-            Toast.makeText(this, "Hola", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Hola", Toast.LENGTH_SHORT).show();
             DatePickerDialog d = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
                 @Override
                 public void onDateSet(DatePicker datePicker, int year, int month, int day) {
@@ -200,7 +202,7 @@ public class NuevaTarea extends AppCompatActivity {
                     }
                     txtFechaf.setText(fdia + "/" + fmes + "/" + yearf);
 
-                    Toast.makeText(NuevaTarea.this, yearf+""+fmes+""+fdia, Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(NuevaTarea.this, yearf+""+fmes+""+fdia, Toast.LENGTH_SHORT).show();
 
                 }
             },2024, 0,1);

@@ -3,6 +3,7 @@ package com.example.taskmastertester;
 import android.annotation.SuppressLint;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -81,6 +82,7 @@ public class Menu extends AppCompatActivity implements View.OnClickListener,OnIt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_home);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         tx = this.findViewById(R.id.text_home);
         calendarView = this.findViewById(R.id.calendarView);
         if ( items != null){
@@ -136,7 +138,7 @@ public class Menu extends AppCompatActivity implements View.OnClickListener,OnIt
     private class LoadEvents extends AsyncTask<String, Void, Void> {
         @Override
         protected Void doInBackground(String... params) {
-            // Aquí debes realizar las operaciones asíncronas, como interactuar con la API de Google Calendar
+            //Aquí debes realizar las operaciones asíncronas, como interactuar con la API de Google Calendar
 
             //String selectedDate = params[0];
             listarEventos();

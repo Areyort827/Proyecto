@@ -1,6 +1,7 @@
 package com.example.taskmastertester;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -22,6 +23,8 @@ public class DetallesEvento extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detalles_tareas);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         titulo = this.findViewById(R.id.dtitulo);
         descripcion = this.findViewById(R.id.ddescripcion);
        // fechafinal = this.findViewById(R.id.dfechafinal);

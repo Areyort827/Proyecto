@@ -121,8 +121,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
     private void ocultarBoton() {
         if (Inicio.admin == true) {
             borrarC.setVisibility(View.INVISIBLE);
-            borrarC.setText("Mostrar Calendario");
-        }else if(Inicio.admin == true){
+            borrarC.setText("Mostrar Calendarioo");
+        }else if(Inicio.admin != true){
             borrarC.setVisibility(View.VISIBLE);
         }
     }
@@ -137,9 +137,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         if (calendarVisible) {
             // Si el CalendarView es visible, hazlo invisible
             calendarView.setVisibility(View.INVISIBLE);
+            borrarC.setText("Mostrar Calendario");
         } else {
             // Si el CalendarView no es visible, hazlo visible
             calendarView.setVisibility(View.VISIBLE);
+            borrarC.setText("Ocultar Calendario");
+
         }
 
         // Invierte el estado de visibilidad

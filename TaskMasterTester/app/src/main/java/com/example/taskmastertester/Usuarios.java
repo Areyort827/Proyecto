@@ -3,6 +3,7 @@ package com.example.taskmastertester;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -39,6 +40,7 @@ public class Usuarios extends AppCompatActivity  {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.listview);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         ListView listViewUsuarios = findViewById(R.id.listViewUsuarios);
         //Hacer consulta
         queue = Volley.newRequestQueue(getApplicationContext());
@@ -47,8 +49,9 @@ public class Usuarios extends AppCompatActivity  {
     }
 
     public void mostrarUsuarios() {
-        String url = "http://192.168.1.138/proyecto/contarUsuarios.php?";
-
+        String url = "http://172.20.10.2/proyecto/contarUsuarios.php?";
+        //172.20.10.2
+        //192.168.1.138
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -123,8 +126,9 @@ public class Usuarios extends AppCompatActivity  {
 
 
     public void eliminarUsuario(int id) {
-        String url = "http://192.168.1.138/proyecto/eliminarUsuario.php?id="+id;
-
+        String url = "http://172.20.10.2/proyecto/eliminarUsuario.php?id="+id;
+        //172.20.10.2
+        //192.168.1.138
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
